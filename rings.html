@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rings</title>
+		<link rel="stylesheet" href="rn_styles.css"/>
+		<link rel="shortcut icon" type="image/svg" href="logo.svg"/>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="header">
+			<div class="navbar">
+					<div class="logo">
+            <a href="index.html"><img id="header-img" src="logo.svg"></a>
+					</div>
+				<div class="navigation">
+					<a href="index_eng.html#about">About</a>
+					<p>|</p>
+					<a href="index_eng.html#photoGallery">Jewellery</a>
+					<p>|</p>
+          <a href="contact.html">Contact</a>
+          <p>|</p>
+				<div class="language">
+					<a id="language" href="">ENG</a>
+					<a id="language" href="sormused.html">EST</a>
+					<a id="language" href="#rus">RUS</a>
+				</div>
+				</div>
+				
+			</div>
+		</div>
+        
+        <section class="album full-height-grow">
+            <div class="album-container">
+                <div class="row">
+                    <div class="column">
+                      <img src="gallery/6rings/Kaksikud_sormus.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor demo" alt='"Twins" 2001 silver'>
+                    </div>
+                    <div class="column">
+                      <img src="gallery/6rings/Maja_Sormus.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor demo" alt='"House" 2008 silver, wood'>
+                    </div>
+                    <div class="column">
+                      <img src="gallery/6rings/Sormus_Kapsas_03.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor demo" alt='"Cabbage" 2010 silver'>
+                    </div>
+                    <div class="column">
+                        <img src="gallery/6rings/Sormus_kuueleheline_02.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor demo" alt='"Six-leaf" 2011 silver'>
+                    </div>
+                    <div class="column">
+                        <img src="gallery/6rings/Sormus_Must_ruut.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor demo" alt='"Black square" 2013 silver, hematite, zircon'>
+                    </div>
+                    <div class="column">
+                        <img src="gallery/6rings/Sormus_Solmed.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor demo" alt='"Nodes" 2013 silver, corundum'>
+                    </div>
+                </div>
+                  
+                  <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+                  
+                      <div class="mySlides">
+                        <img src="gallery/6rings/Kaksikud_sormus.jpg" style="width:100%">
+                      </div>
+                  
+                      <div class="mySlides">
+                        <img src="gallery/6rings/Maja_Sormus.jpg" style="width:100%">
+                      </div>
+                  
+                      <div class="mySlides">
+                        <img src="gallery/6rings/Sormus_Kapsas_03.jpg" style="width:100%">
+                      </div>
+
+                      <div class="mySlides">
+                        <img src="gallery/6rings/Sormus_kuueleheline_02.jpg" style="width:100%">
+                      </div>
+
+                      <div class="mySlides">
+                        <img src="gallery/6rings/Sormus_Must_ruut.jpg" style="width:100%">
+                      </div>
+
+                      <div class="mySlides">
+                        <img src="gallery/6rings/Sormus_Solmed.jpg" style="width:100%">
+                      </div>
+                      
+                      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  
+                      <div class="caption-container">
+                        <p id="caption"></p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+    </body>
+      
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }   
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+    var slideIndex = 1;
+    showSlides(slideIndex);   
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }   
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+</html>

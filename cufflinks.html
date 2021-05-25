@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cufflinks</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="mn_styles.css"/>
+		<link rel="shortcut icon" type="image/svg" href="logo.svg"/>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body class="container full-height-grow">
+        <div class="header">
+			<div class="navbar">
+				<div class="logo">
+          <a href="index.html"><img id="header-img" src="logo.svg"></a>
+				</div>
+				<div class="navigation">
+              <a href="index_eng.html#about">About</a>
+              <p>|</p>
+              <a href="index_eng.html#photoGallery">Jewellery</a>
+              <p>|</p>
+              <a href="contact.html">Contact</a>
+              <p>|</p>
+				    <div class="language">
+					    <a id="language" href="">ENG</a>
+					    <a id="language" href="manzetinoobid.html">EST</a>
+					    <a id="language" href="#rus">RUS</a>
+				    </div>
+				</div>
+			</div>
+        </div>
+        
+        <section class="album full-height-grow">
+            <div class="album-container">
+                <div class="row">
+                    <div class="column">
+                      <img src="gallery/3cufflinks/Mansetinoobid_2008.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor demo" alt='"Earth and the Moon" 2008 wood, silver'>
+                    </div>
+                    <div class="column">
+                      <img src="gallery/3cufflinks/Mansetinoobid_ymmargused.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor demo" alt='"Planets" 2008 wood, silver'>
+                    </div>
+                    <div class="column">
+                      <img src="gallery/3cufflinks/MN_soomus.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor demo" alt='"Chainmail" 2010 silver'>
+                    </div>
+                    <div class="column">
+                      <img src="gallery/3cufflinks/MN_Soomus_hele_01.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor demo" alt='"Light chainmail" 2008 silver'>
+                    </div>
+                    <div class="column">
+                      <img src="gallery/3cufflinks/MN_tapilised_02.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor demo" alt='"Celestial bodies" 2009 silver, wood'>
+                    </div>
+                </div>
+                  
+                  <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+                  
+                      <div class="mySlides">
+                        <img src="gallery/3cufflinks/Mansetinoobid_2008.jpg" style="width:100%">
+                      </div>
+                  
+                      <div class="mySlides">
+                        <img src="gallery/3cufflinks/Mansetinoobid_ymmargused.jpg" style="width:100%">
+                      </div>
+                  
+                      <div class="mySlides">
+                        <img src="gallery/3cufflinks/MN_soomus.jpg" style="width:100%">
+                      </div>
+                      
+                      <div class="mySlides">
+                        <img src="gallery/3cufflinks/MN_Soomus_hele_01.jpg" style="width:100%;">
+                      </div>
+
+                      <div class="mySlides">
+                        <img src="gallery/3cufflinks/MN_tapilised_02.jpg" style="width:100%;">
+                      </div>
+                      
+                      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  
+                      <div class="caption-container">
+                        <p id="caption"></p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+    </body>
+      
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }   
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+    var slideIndex = 1;
+    showSlides(slideIndex);   
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }   
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+</html>
