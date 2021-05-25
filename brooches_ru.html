@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Броши</title>
+		<link rel="stylesheet" href="bro_styles.css"/>
+		<link rel="shortcut icon" type="image/svg" href="logo.svg"/>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="header">
+			<div class="navbar">
+					<div class="logo">
+            <a href="index.html"><img id="header-img" src="logo.svg"></a>
+					</div>
+				<div class="navigation">
+					<a href="index_rus.html#about">Обо мне</a>
+					<p>|</p>
+					<a href="index_rus.html#photoGallery">Ювелирные изделия</a>
+					<p>|</p>
+          <a href="contact_rus.html">Контакт</a>
+          <p>|</p>
+				<div class="language">
+					<a id="language" href="brooches.html">ENG</a>
+					<a id="language" href="rinnaehted.html">EST</a>
+					<a id="language" href="">RUS</a>
+				</div>
+				</div>
+				
+			</div>
+		</div>
+        
+        <section class="album full-height-grow">
+            <div class="album-container">
+                <div class="row">
+                    <div class="column">
+                      <img src="gallery/5brooches/4_vello_lemmik.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor demo" alt='"Валерии" 2005 серебро, янтарь, амазонит, малахит'>
+                    </div>
+                    <div class="column">
+                      <img src="gallery/5brooches/Pross_Noop.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor demo" alt='"Пуговица" 2012 серебро, перламутр'>
+                    </div>
+                    <div class="column">
+                      <img src="gallery/5brooches/Pross_Sinine_ovaal.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor demo" alt='"Голубой овал" 2012 серебро, лазурит'>
+                    </div>
+                </div>
+                  
+                  <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+                  
+                      <div class="mySlides">
+                        <img src="gallery/5brooches/4_vello_lemmik.jpg" style="width:100%">
+                      </div>
+                  
+                      <div class="mySlides">
+                        <img src="gallery/5brooches/Pross_Noop.jpg" style="width:100%">
+                      </div>
+                  
+                      <div class="mySlides">
+                        <img src="gallery/5brooches/Pross_Sinine_ovaal.jpg" style="width:100%">
+                      </div>
+                      
+                      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  
+                      <div class="caption-container">
+                        <p id="caption"></p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+    </body>
+      
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }   
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+    var slideIndex = 1;
+    showSlides(slideIndex);   
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }   
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+</html>
