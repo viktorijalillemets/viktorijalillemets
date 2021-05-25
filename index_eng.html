@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Viktorija Lillemets</title>
+		<link rel="stylesheet" href="styles.css"/>
+		<link rel="shortcut icon" type="image/svg" href="logo.svg"/>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="header">
+			<div class="navbar">
+				<div class="logo">
+					<a href="index.html"><img id="header-img" src="logo.svg"></a>
+				</div>
+				<div class="navigation">
+					<a href="#about">About</a>
+					<p>|</p>
+					<a href="#photoGallery">Jewellery</a>
+					<p>|</p>
+					<a href="contact.html">Contact</a>
+                    <p>|</p>
+				<div class="language">
+					<a id="language" href="">ENG</a>
+					<a id="language" href="index.html">EST</a>
+					<a id="language" href="">RUS</a>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+	<div class="bg-image" id="desc">
+		<div class="intro-cont">
+			<div class="introduction">
+				<div class="intro-content">
+					<div class="intro-text">
+						
+					</div>
+				</div>
+			</div>
+				<div class="zigzag">
+					<h1 id="zigText">VIKTORIJA   LILLEMETS</h1>
+					<p id="zigText2">viktorijalillemets15@gmail.com</p>
+				</div>
+		</div>
+	</div>
+
+	
+	<div id="about" class="bg-image2">
+		<div class="about">
+			<div class="about-content">
+				<div class="about-text">
+					<p>I remember myself as a small girl in a jewellery store. I was there with my mother or granny, the counter with jewellery was higher than my eyes. I can recall their discussion, what was stylish and what was not. Later, when I already could reach the counter, the situation became much more exciting – it was a serious research. As a child, I could never dream of making jewellery myself.</p>
+					<p>At the end of high school I knew already well that I would come to Estonia, to study glasswork. However, the fate brought me to the department of jewellery decoration – I am very thankful for such chance –, where the supervisor of my diploma project was Leili Kuldkepp. After graduation I was a freelancer for many years, since 2007 I have been working as a pedagogue. I still continue making jewellery. I use mostly silver. My jewellery must be in harmony with the wearer, to avoid any uncomfortable feelings. They must be good friends of the wearer in any situation. I like to combine silver with stones, amber, glass textile.</p>
+				</div>
+					<div class="about-image">
+						<img id="about-img" src="portrait.jpg">
+					</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="photoGallery">
+		<div class="galleryContent">
+			<div class="folderImg">
+				<a href="necklaces.html">
+					<img src="gallery/1necklaces/Ripats_malahiidiga_01.jpg">
+					<p>NECKLACES</p>
+				</a>
+			</div>
+			<div class="folderImg">
+				<a href="korvarongad.html">
+					<img src="gallery/2earrings/KR_Punane_pisar_01.jpg">
+					<p>EARRINGS</p>
+				</a>
+			</div>
+			<div class="folderImg">
+				<a href="manzetinoobid.html">
+					<img src="gallery/3cufflinks/Mansetinoobid_2008.jpg">
+					<p>CUFFLINKS</p>		
+				</a>
+			</div>
+			<div class="folderImg">
+				<a href="randmeehted.html">
+					<img src="gallery/4bracelets/Kaekett_02.jpg">
+					<p>BRACELETS</p>
+				</a>
+			</div>
+			<div class="folderImg">
+				<a href="rinnaehted.html">
+					<img src="gallery/5brooches/4_vello_lemmik.jpg">
+					<p>BROOCHES</p>
+				</a>
+			</div>
+			<div class="folderImg">
+				<a href="sormused.html">
+					<img src="gallery/6rings/Maja_Sormus.jpg">
+					<p>RINGS</p>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+			<div class="footer">
+				<p>Viktorija Lillemets© 2021</p>
+			</div>
+		
+		</footer>
+		
+
+		<script type="text/javascript">
+			
+			document.addEventListener("DOMContentLoaded", function (event) {
+				var scrollpos = sessionStorage.getItem('scrollpos');
+				if (scrollpos) {
+					window.scrollTo(0, scrollpos);
+					sessionStorage.removeItem('scrollpos');
+				}
+			});
+
+			window.addEventListener("beforeunload", function (e) {
+				sessionStorage.setItem('scrollpos', window.scrollY);
+			});
+
+			window.onscroll = function() {
+				if (window.pageYOffset > 0) {
+					document.getElementById("zigText").style.opacity = "0";
+					document.getElementById("zigText2").style.opacity = "0";					
+				} if (window.pageYOffset > 95) {
+					document.getElementsByClassName("zigzag")[0].style.right = "0";
+					document.getElementsByClassName("zigzag")[0].style.opacity = "1";
+					document.getElementById("zigText").style.opacity = "1";
+					document.getElementById("zigText2").style.opacity = "1";
+				} if (window.pageYOffset > 800) {
+					document.getElementsByClassName("zigzag")[0].style.right = "-100vw";
+					document.getElementsByClassName("zigzag")[0].style.opacity = "0";
+				} if (window.pageYOffset < 575) {
+					document.getElementsByClassName("about-image")[0].style.opacity = "0";
+					document.getElementsByClassName("about-text")[0].style.opacity = "0";
+				} if (window.pageYOffset > 575) {
+					document.getElementsByClassName("about-image")[0].style.opacity = "1";
+					document.getElementsByClassName("about-text")[0].style.opacity = "1";
+				}
+			}
+		</script>
+	</body>
+</html>

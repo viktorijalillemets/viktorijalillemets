@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Viktorija Lillemets</title>
+		<link rel="stylesheet" href="styles.css"/>
+		<link rel="shortcut icon" type="image/svg" href="logo.svg"/>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="header">
+			<div class="navbar">
+				<div class="logo">
+					<a href="index.html"><img id="header-img" src="logo.svg"></a>
+				</div>
+				<div class="navigation">
+					<a href="#about">Minust</a>
+					<p>|</p>
+					<a href="#photoGallery">Ehted</a>
+					<p>|</p>
+					<a href="kontakt.html">Kontakt</a>
+                    <p>|</p>
+				<div class="language">
+					<a id="language" href="index_eng.html">ENG</a>
+					<a id="language" href="">EST</a>
+					<a id="language" href="#rus">RUS</a>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+	<div class="bg-image" id="desc">
+		<div class="intro-cont">
+			<div class="introduction">
+				<div class="intro-content">
+					<div class="intro-text">
+						
+					</div>
+				</div>
+			</div>
+				<div class="zigzag">
+					<h1 id="zigText">VIKTORIJA   LILLEMETS</h1>
+					<p id="zigText2">viktorijalillemets15@gmail.com</p>
+				</div>
+		</div>
+	</div>
+
+	
+	<div id="about" class="bg-image2">
+		<div class="about">
+			<div class="about-content">
+				<div class="about-text">
+					<p>Mäletan end väikese tüdrukuna juveelipoes. Olin ema või vanaema käekõrval, lett ehetega oli silmadest kõrgemal. Meenuvad nende arutlused selle üle, mis on maitsekas ja mis ei ole. Hiljem, kui letini ulatusin, oli olukord hoopis põnevam - see oli tõsine uurimus. Lapsena ei osanud ma uneski näha, et mina ise võiksin kunagi ehteid teha.</p>
+					<p>Keskkooli lõpus teadsin juba täpselt, et tulen Eestisse klaasi õppima. Saatuse tahtel õppisin hoopis metallehistöö kateedris (olen sellele juhusele väga tänulik), diplomitöö juhendaja oli Leili Kuldkepp. Pärast lõpetamist olin palju aastaid vabakutseline, alates 2007. aastast olen ametis pedagoogina.	Metallitööd teen aga ikka edasi. Enamasti kasutan hõbedat. Ehted, mida teen, peavad kandjaga harmoneeruma, et tal ei tekiks neid kandes iial ebamugavat tunnet. Nad peavad olema igas olukorras kandja head sõbrad. Meelsasti kombineerin koos hõbedaga kive, merevaiku, klaasi, tekstiili.</p>
+				</div>
+					<div class="about-image">
+						<img id="about-img" src="portrait.jpg">
+					</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="photoGallery">
+		<div class="galleryContent">
+			<div class="folderImg">
+				<a href="kaelaehted.html">
+					<img src="gallery/1necklaces/Ripats_malahiidiga_01.jpg">
+					<p>KAELAEHTED</p>
+				</a>
+			</div>
+			<div class="folderImg">
+				<a href="korvarongad.html">
+					<img src="gallery/2earrings/KR_Punane_pisar_01.jpg">
+					<p>KÕRVARÕNGAD</p>
+				</a>
+			</div>
+			<div class="folderImg">
+				<a href="manzetinoobid.html">
+					<img src="gallery/3cufflinks/Mansetinoobid_2008.jpg">
+					<p>MANŽETINÖÖBID</p>		
+				</a>
+			</div>
+			<div class="folderImg">
+				<a href="randmeehted.html">
+					<img src="gallery/4bracelets/Kaekett_02.jpg">
+					<p>RANDMEEHTED</p>
+				</a>
+			</div>
+			<div class="folderImg">
+				<a href="rinnaehted.html">
+					<img src="gallery/5brooches/4_vello_lemmik.jpg">
+					<p>RINNAEHTED</p>
+				</a>
+			</div>
+			<div class="folderImg">
+				<a href="sormused.html">
+					<img src="gallery/6rings/Maja_Sormus.jpg">
+					<p>SÕRMUSED</p>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+			<div class="footer">
+				<p>Viktorija Lillemets© 2021</p>
+			</div>
+		
+		</footer>
+		
+
+		<script type="text/javascript">
+			
+			document.addEventListener("DOMContentLoaded", function (event) {
+				var scrollpos = sessionStorage.getItem('scrollpos');
+				if (scrollpos) {
+					window.scrollTo(0, scrollpos);
+					sessionStorage.removeItem('scrollpos');
+				}
+			});
+
+			window.addEventListener("beforeunload", function (e) {
+				sessionStorage.setItem('scrollpos', window.scrollY);
+			});
+
+			window.onscroll = function() {
+				if (window.pageYOffset > 0) {
+					document.getElementById("zigText").style.opacity = "0";
+					document.getElementById("zigText2").style.opacity = "0";					
+				} if (window.pageYOffset > 95) {
+					document.getElementsByClassName("zigzag")[0].style.right = "0";
+					document.getElementsByClassName("zigzag")[0].style.opacity = "1";
+					document.getElementById("zigText").style.opacity = "1";
+					document.getElementById("zigText2").style.opacity = "1";
+				} if (window.pageYOffset > 800) {
+					document.getElementsByClassName("zigzag")[0].style.right = "-100vw";
+					document.getElementsByClassName("zigzag")[0].style.opacity = "0";
+				} if (window.pageYOffset < 575) {
+					document.getElementsByClassName("about-image")[0].style.opacity = "0";
+					document.getElementsByClassName("about-text")[0].style.opacity = "0";
+				} if (window.pageYOffset > 575) {
+					document.getElementsByClassName("about-image")[0].style.opacity = "1";
+					document.getElementsByClassName("about-text")[0].style.opacity = "1";
+				}
+			}
+		</script>
+	</body>
+</html>
